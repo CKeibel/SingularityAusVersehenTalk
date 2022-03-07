@@ -16,7 +16,7 @@ def load_agent(name: str):
 
 
 if __name__ == "__main__":
-    agent = load_agent(AGENT_LIST[0])
+    agent = load_agent(AGENT_LIST[1])
     env = make_env(GAME_LIST[0])
 
     for episode in range(EPISODES):
@@ -24,6 +24,9 @@ if __name__ == "__main__":
         done = False
         while not done:
             action = np.argmax(agent.predict(state))
-            state, reward, done, info = env.step(action)
+            try:
+                state, reward, done, info = env.step(action)
+            except:
+                state, reward, done, info = env.step(env.action_space.sample())
             sleep(0.1)
             env.render()
