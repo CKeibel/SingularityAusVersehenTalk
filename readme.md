@@ -1,4 +1,4 @@
-# JavaLand 2022 - Singularity aus Versehen [Code]
+# Singularity aus Versehen [Code]
 ## Setup
 <ul>
 <li>Python 3.9</li>
